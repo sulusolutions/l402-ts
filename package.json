@@ -7,7 +7,7 @@
     "build": "rm -rf dist/ && tsc",
     "start": "node dist/index.js",
     "dev": "ts-node src/index.ts",
-    "test": "mocha test/*.js"
+    "test": "npm run build && mocha test/**/*.js"
   },
   "repository": {
     "type": "git",
