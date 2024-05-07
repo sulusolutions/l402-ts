@@ -32,5 +32,9 @@
     "ts-mocha": "^10.0.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@getalby/sdk": "^3.5.0",
+    "@webbtc/webln-types": "^3.0.0"
   }
 }
