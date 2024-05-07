@@ -1,0 +1,1 @@
+export {setupL402Interceptor} from './axios';

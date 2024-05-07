@@ -28,6 +28,7 @@
     "@types/sinon": "^17.0.3",
     "chai": "^4.3.6",
     "mocha": "^10.4.0",
+    "nock": "^13.5.4",
     "sinon": "^17.0.1",
     "ts-mocha": "^10.0.0",
     "ts-node": "^10.9.2",
@@ -35,6 +36,7 @@
   },
   "dependencies": {
     "@getalby/sdk": "^3.5.0",
-    "@webbtc/webln-types": "^3.0.0"
+    "@webbtc/webln-types": "^3.0.0",
+    "axios": "^1.6.8"
   }
 }
