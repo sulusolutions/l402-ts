@@ -4,9 +4,10 @@
   "description": "L402 client and tools for Javascript.",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "rm -rf dist/ && tsc",
     "start": "node dist/index.js",
-    "dev": "ts-node src/index.ts"
+    "dev": "ts-node src/index.ts",
+    "test": "mocha test/*.js"
   },
   "repository": {
     "type": "git",
@@ -25,9 +26,10 @@
     "@types/mocha": "^10.0.6",
     "@types/node": "^20.12.10",
     "@types/sinon": "^17.0.3",
-    "chai": "^5.1.0",
+    "chai": "^4.3.6",
     "mocha": "^10.4.0",
     "sinon": "^17.0.1",
+    "ts-mocha": "^10.0.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
   }
