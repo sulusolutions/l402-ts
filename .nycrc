@@ -1,0 +1,9 @@
+{
+    "all": true,
+    "include": ["dist/**/*.js"], 
+    "exclude": ["dist/**/*.test.js", "**/test/**"], 
+    "extension": [".js"], 
+    "reporter": ["text", "html"],
+    "sourceMap": false,
+    "instrument": true
+  }
