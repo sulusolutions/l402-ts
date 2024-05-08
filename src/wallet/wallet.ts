@@ -18,17 +18,3 @@ export abstract class Wallet {
      */
     abstract payInvoice(invoice: string): Promise<PaymentResult>;
 }
-
-// Mock implementation of a Wallet
-class MockWallet extends Wallet {
-    // Mock implementation of payInvoice for demonstration purposes
-    async payInvoice(invoice: string): Promise<PaymentResult> {
-        if (invoice === "valid-invoice") {
-            // Example successful result
-            return new PaymentResult("example-preimage", true);
-        } else {
-            // Example failure result
-            return new PaymentResult("", false, "Invalid invoice");
-        }
-    }
-}

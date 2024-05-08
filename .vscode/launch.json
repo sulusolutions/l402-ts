@@ -23,11 +23,11 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch Program",
+            "name": "Launch Example",
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}/src/yourNodeIndex.js"
+            "program": "${workspaceFolder}/examples/randomNumber.js"
         }
     ]
 }
