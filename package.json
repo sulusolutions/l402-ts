@@ -1,6 +1,6 @@
 {
   "name": "l402",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "L402 client and tools for Javascript.",
   "main": "dist/index.js",
   "scripts": {
