@@ -72,7 +72,7 @@ class MockWallet extends Wallet {
       const url = 'https://example.com/resource';
       nock('https://example.com')
         .get('/resource')
-        .reply(402, '', { 'www-authenticate': 'L402 invoice="mock-invoice" macaroon="mock-macaroon"' });
+        .reply(402, '', { 'www-authenticate': 'L402 invoice="mockinvoice" macaroon="mock-macaroon"' });
   
       // Mock the successful retry response
       nock('https://example.com')

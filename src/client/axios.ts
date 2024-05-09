@@ -66,8 +66,8 @@ export function setupL402Interceptor(instance: AxiosInstance, wallet: Wallet, st
  */
 function parseHeader(header: string): { header_key: string; invoice: string; macaroon: string } | null {
   const headerKeyMatch = /^(LSAT|L402)/.exec(header);
-  const invoiceMatch = /invoice="([^"]+)"/.exec(header);
-  const macaroonMatch = /macaroon="([^"]+)"/.exec(header);
+  const invoiceMatch = /invoice="([\w|\d]+)"/.exec(header); // Lightning invoice only use alphanumeric characters, see: https://github.com/lightning/bolts/blob/master/11-payment-encoding.md
+  const macaroonMatch = /macaroon="([\w|\d\+\/=_-]+)"/.exec(header); // Base64 URL-safe characters
 
   if (invoiceMatch && macaroonMatch) {
     return {
