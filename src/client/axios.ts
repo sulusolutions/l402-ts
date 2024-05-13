@@ -11,8 +11,7 @@ import { Wallet, PaymentResult, Store } from '../index';
 export function setupL402Interceptor(instance: AxiosInstance, wallet: Wallet, store: Store): void {
   // Request interceptor to set an authorization header if a token is available
   instance.interceptors.request.use((config: InternalAxiosRequestConfig<any>) => {
-    // Combine baseURL and URL into a fully qualified URL if baseURL is specified
-    const url = config.baseURL ? new URL(config.url ?? '', config.baseURL).toString() : config.url;
+    const url = axios.getUri(config); // Get the fully qualified URL
     const method = config.method?.toUpperCase() || 'GET'; // Use 'GET' as the default method
 
     // Retrieve the token using the fully qualified URL and HTTP method
@@ -40,7 +39,7 @@ export function setupL402Interceptor(instance: AxiosInstance, wallet: Wallet, st
           if (paymentResult.success) {
             // Create a new L402 token and store it
             const l402Token = `${challenge.header_key} ${challenge.macaroon}:${paymentResult.preimage}`;
-            const url = config.baseURL ? new URL(config.url ?? '', config.baseURL).toString() : config.url;
+            const url = axios.getUri(config); // Get the fully qualified URL
             const method = config.method?.toUpperCase() || 'GET'; // Use 'GET' as the default method
 
             // Store the new token with the fully qualified URL and method
